@@ -38,9 +38,16 @@ public class MainActivity extends AppCompatActivity {
             Time.setText("錯誤!! 請重新出入");
         }
 
-        int x = Year % 4;
-        if(x == 0){
-            yyy.setText("閏年");
+        if(Year % 4 == 0){
+            if(Year % 100 == 0){
+                if (Year % 400 == 0){
+                    yyy.setText("閏年");
+                } else {
+                    yyy.setText("平年");
+                }
+            }else {
+                yyy.setText("閏年");
+            }
         }
         else {
             yyy.setText("平年");
